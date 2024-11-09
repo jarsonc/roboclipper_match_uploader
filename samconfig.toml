@@ -3,7 +3,7 @@
 version = 0.1
 
 [default.global.parameters]
-stack_name = "roboclipper_match_uploader_sam"
+stack_name = "roboclipper_match_uploader"
 
 [default.build.parameters]
 cached = true

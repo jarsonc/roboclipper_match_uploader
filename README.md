@@ -38,7 +38,7 @@ roboclipper_match_uploader_sam$ sam build --use-container
 ```
 
 ```bash
-roboclipper_match_uploader_sam$ sam local invoke RoboclipperMatchUploader -e events/event.json
+roboclipper_match_uploader_sam$ sam local invoke RoboclipperMatchUploaderFunction -e events/event.json
 ```
 
 ## Add a resource to your application
