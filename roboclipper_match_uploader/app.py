@@ -22,6 +22,7 @@ notVideoFile = {
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 
 def lambda_handler(event, context):
+    print("Starting handler")
     print(event)
     message = event['Records'][0]['Sns']['Message']
     print(type(message))

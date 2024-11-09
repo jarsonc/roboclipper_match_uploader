@@ -1,0 +1,6 @@
+boto3==1.35.57
+google_api_python_client==2.151.0
+google_auth_oauthlib==1.2.1
+protobuf==5.28.3
+reportlab==4.2.5
+svglib==1.5.1

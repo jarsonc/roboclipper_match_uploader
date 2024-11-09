@@ -1,0 +1,34 @@
+name: Update roboclipper-match-uploader lambda automatically
+
+env:
+  AWS_REGION : us-east-1
+
+permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read    # This is required for actions/checkout
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::831866741626:role/roboclipper_match_uploader_github
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: actions/setup-python@v2
+      - uses: aws-actions/setup-sam@v1
+      # sam build 
+      - run: sam build --use-container
+
+# Run Unit tests- Specify unit tests here 
+
+# sam deploy
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name roboclipper-match-uploader --s3-bucket github-deployments-831866741626 --capabilities CAPABILITY_IAM --region ${{ env.AWS_REGION }} 
