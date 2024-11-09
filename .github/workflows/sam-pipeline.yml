@@ -30,4 +30,4 @@ jobs:
 # Run Unit tests- Specify unit tests here 
 
 # sam deploy
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name roboclipper-match-uploader --s3-bucket github-deployments-831866741626 --capabilities CAPABILITY_IAM --region ${{ env.AWS_REGION }} 
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name roboclipper-match-uploader --s3-bucket 831866741626-github-deployments --capabilities CAPABILITY_IAM --region ${{ env.AWS_REGION }} 
