@@ -20,7 +20,7 @@ Resources:
   RoboclipperMatchUploaderFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      FunctionName: "Roboclipper Match Uploader"
+      FunctionName: "RoboclipperMatchUploader"
       Description: "An automated YouTube uploader responding on cut files from an SNS topic"
       CodeUri: roboclipper_match_uploader/
       Handler: app.lambda_handler
