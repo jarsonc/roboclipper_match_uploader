@@ -48,6 +48,3 @@ Outputs:
   RoboclipperMatchUploaderFunction:
     Description: Roboclipper Match Uploader Lambda Function ARN
     Value: !GetAtt RoboclipperMatchUploaderFunction.Arn
-  RoboclipperMatchUploaderFunctionIamRole:
-    Description: Implicit IAM Role created for RoboclipperMatchUploader function
-    Value: !GetAtt RoboclipperMatchUploaderFunctionIamRole.Arn
