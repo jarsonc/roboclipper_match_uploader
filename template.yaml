@@ -29,11 +29,12 @@ Resources:
       - x86_64
       Environment:
         Variables:
-          EVENT_NAME: "Washington Test"
-          EVENT_TYPE: "Semifinals"
+          EVENT_NAME: "WA - Asimov"
+          EVENT_TYPE: "Semifinal"
           EVENT_DESCRIPTION: "Event Information: \n
                               FIRST Washington - https://firstwa.org/ \n
                               Official FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA"
+          EVENT_PLAYLIST: "PLoRnKfyWNUleDroiOiFaxPXGPPqZJ8Fvr"
           SEASON_NAME: "Into The Deep"
       Events:
         RoboclipperSNSReceived:
