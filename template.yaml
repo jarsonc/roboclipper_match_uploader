@@ -8,8 +8,8 @@ Description: >
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
-    Timeout: 3
-
+    Timeout: 900
+    MemorySize: 4112
     Tracing: Active
     # You can add LoggingConfig parameters such as the Logformat, Log Group, and SystemLogLevel or ApplicationLogLevel. Learn more here https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html#sam-function-loggingconfig.
     LoggingConfig:
@@ -30,7 +30,11 @@ Resources:
       Environment:
         Variables:
           EVENT_NAME: "Washington Test"
-          EVENT_TYPE: "League Meet 1"
+          EVENT_TYPE: "Semifinals"
+          EVENT_DESCRIPTION: "Event Information: \n
+                              FIRST Washington - https://firstwa.org/ \n
+                              Official FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA"
+          SEASON_NAME: "Into The Deep"
       Events:
         RoboclipperSNSReceived:
           Type: SNS
