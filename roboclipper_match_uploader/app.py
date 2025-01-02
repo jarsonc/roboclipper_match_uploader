@@ -108,7 +108,7 @@ def authyt():
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if not os.path.exists(TOKEN_FILE):
+    if os.path.exists(TOKEN_FILE):
         try:
             print("Trying to refresh creds")
             creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
