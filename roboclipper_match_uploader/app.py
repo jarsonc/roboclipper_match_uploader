@@ -75,7 +75,7 @@ def callYouTube(clippedVideo, bucketKey):
             "title": title
           },
           "status": {
-            "privacyStatus": "private"
+            "privacyStatus": "unlisted"
           }
         },
         media_body=MediaIoBaseUpload(clippedVideo, mimetype="video/mp4")
