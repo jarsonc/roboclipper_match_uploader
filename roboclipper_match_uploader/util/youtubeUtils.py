@@ -77,7 +77,7 @@ def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey):
             "title": title,
           },
           "status": {
-            "privacyStatus": "unlisted"
+            "privacyStatus": "public"
           }
         },
         media_body=MediaIoBaseUpload(clippedVideo, mimetype="video/mp4")
