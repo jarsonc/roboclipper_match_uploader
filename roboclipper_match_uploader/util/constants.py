@@ -16,3 +16,5 @@ DEFAULT_PLAYLIST = "PLoRnKfyWNUlcTmM2XCDp7ms11yalWyn0g" #"Needs Sorted" private 
 # AWS Consts
 ROBOCLIPPER_RESOURCE_BUCKET_NAME = "roboclipper-resources"
 
+# Files
+EVENT_CONFIGS_FILE = "./util/eventConfiguration.json"

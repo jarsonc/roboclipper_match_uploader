@@ -1,3 +1,4 @@
+import re
 import boto3
 import googleapiclient.discovery
 import googleapiclient.errors
@@ -18,13 +19,19 @@ s3Client = boto3.client('s3')
 def callYouTube(clippedVideo, bucketKey):
     youtubeClient = authyt(s3Client)
 
+    with open(EVENT_CONFIGS_FILE) as eventConfigFile:
+        allEventConfigs = json.load(eventConfigFile)
+        eventCode = bucketKey.split('/')[1].strip().upper()
+        eventConfig = allEventConfigs.get(eventCode)
+
+
     print("Uploading video to YouTube")
-    videoUploadResponse = uploadVideoRequest(youtubeClient, clippedVideo, bucketKey)
+    videoUploadResponse = uploadVideoRequest(youtubeClient, clippedVideo, bucketKey, eventConfig)
     videoId = videoUploadResponse.get("id")
     print("Uploaded video: ", videoUploadResponse)
 
     print("Updating playlist")
-    uploadPlaylistResponse = uploadPlaylistRequest(youtubeClient, videoId)
+    uploadPlaylistResponse = uploadPlaylistRequest(youtubeClient, videoId, eventConfig)
     print("Successfully updated playlist: ", uploadPlaylistResponse)
     return
 
@@ -57,17 +64,10 @@ def authyt(s3Client):
         creds = createTokenFile(creds, DESKTOP_TOKEN_FILE)
     return googleapiclient.discovery.build(API_SERVICE_NAME, API_VERSION, credentials=creds, cache_discovery=False)
 
-def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey):
-    strippedMatchTitle = Path(bucketKey).stem
-    if 'M' in strippedMatchTitle:
-        formattedMatchTitle = strippedMatchTitle.replace("M", "Playoff Match ")
-    elif 'Q' in strippedMatchTitle:
-        formattedMatchTitle = strippedMatchTitle.replace("Q", "Qualification Match ")
-    else:
-        formattedMatchTitle = strippedMatchTitle
-    title = DEFAULT_TITLE if os.environ.get("EVENT_NAME") is None or os.environ.get("EVENT_TYPE") is None or os.environ.get("SEASON_NAME") is None \
-        else '{0} {1} - {2} - {3}'.format(os.environ.get("EVENT_NAME"), os.environ.get("EVENT_TYPE"), formattedMatchTitle, os.environ.get("SEASON_NAME"))
-    description = DEFAULT_DESCRIPTION if os.environ.get("EVENT_DESCRIPTION") is None else os.environ.get('EVENT_DESCRIPTION')
+def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey, eventConfig):
+    title,description = buildTitleAndDescription(bucketKey, eventConfig)
+    privacy = "unlisted" if eventConfig is None or eventConfig.get("EVENT_NAME") is "TEST" else "public"
+
     request = youtubeClient.videos().insert(
         part="snippet,status",
         body={
@@ -77,15 +77,17 @@ def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey):
             "title": title,
           },
           "status": {
-            "privacyStatus": "public"
+            "privacyStatus": privacy
           }
         },
         media_body=MediaIoBaseUpload(clippedVideo, mimetype="video/mp4")
     )
+
     return request.execute()
 
-def uploadPlaylistRequest(youtubeClient, videoId):
-    playlist = DEFAULT_PLAYLIST if os.environ.get("EVENT_PLAYLIST") is None else os.environ.get("EVENT_PLAYLIST")
+def uploadPlaylistRequest(youtubeClient, videoId, eventConfig):
+    playlist = DEFAULT_PLAYLIST if eventConfig is None else eventConfig.get("EVENT_PLAYLIST")
+
     request = youtubeClient.playlistItems().insert(
         part="snippet",
         body={
@@ -98,6 +100,7 @@ def uploadPlaylistRequest(youtubeClient, videoId):
           }
         }
     )
+
     return request.execute()
 
 def createTokenFile(creds, clientSecretsFile):
@@ -111,3 +114,17 @@ def createTokenFile(creds, clientSecretsFile):
         token.write(creds.to_json())
         s3Client.put_object(Body=creds.to_json(), Bucket=ROBOCLIPPER_RESOURCE_BUCKET_NAME, Key=TOKEN_FILE)
     return creds
+
+def buildTitleAndDescription(bucketKey, eventConfig):
+    strippedMatchTitle = Path(bucketKey).stem
+
+    if 'M' in strippedMatchTitle:
+        formattedMatchTitle = strippedMatchTitle.replace("M", "Playoff Match ")
+    elif 'Q' in strippedMatchTitle:
+        formattedMatchTitle = strippedMatchTitle.replace("Q", "Qualification Match ")
+    else:
+        formattedMatchTitle = strippedMatchTitle
+    title = DEFAULT_TITLE if eventConfig is None else '{0} {1} - {2} - {3}'.format(eventConfig.get("EVENT_NAME"), eventConfig.get("EVENT_TYPE"), formattedMatchTitle, eventConfig.get("SEASON_NAME"))
+    description = DEFAULT_DESCRIPTION if eventConfig is None else eventConfig.get('EVENT_DESCRIPTION')
+
+    return title, description

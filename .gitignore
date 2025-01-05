@@ -3,3 +3,4 @@ token.json
 desktopSecret.json
 /package
 .aws-sam
+__pycache__

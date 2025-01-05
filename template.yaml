@@ -27,15 +27,6 @@ Resources:
       Runtime: python3.12
       Architectures:
       - x86_64
-      Environment:
-        Variables:
-          EVENT_NAME: "High Definition"
-          EVENT_TYPE: "Invitational"
-          EVENT_DESCRIPTION: "Event Information: \n
-                              FIRST Washington - https://firstwa.org/ \n
-                              Official FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA"
-          EVENT_PLAYLIST: "PLoRnKfyWNUldsknJNSwmuNzUKiLRv3AyG"
-          SEASON_NAME: "Into The Deep"
       Events:
         RoboclipperSNSReceived:
           Type: SNS

@@ -1,0 +1,30 @@
+{
+    "TEST": {
+        "EVENT_NAME": "TEST",
+        "EVENT_TYPE": "EVENT",
+        "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlcTmM2XCDp7ms11yalWyn0g",
+        "SEASON_NAME": "TEST SEASON"
+    },
+    "USWABES1": {
+        "EVENT_NAME": "High Definition",
+        "EVENT_TYPE": "Invitational",
+        "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUldsknJNSwmuNzUKiLRv3AyG",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "USWAMVSQ1": {
+        "EVENT_NAME": "Asimov",
+        "EVENT_TYPE": "Semifinal",
+        "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUldjdc7Q5dTY1HaFbbYtuD9I",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "USWAMVSQ2": {
+        "EVENT_NAME": "Capek",
+        "EVENT_TYPE": "Semifinal",
+        "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlcUXUUZUjdmNjZyhjg_VQnI",
+        "SEASON_NAME": "Into The Deep"
+    }
+}
