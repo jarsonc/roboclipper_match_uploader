@@ -11,7 +11,7 @@ Deploys on uload to AWS account `831866741626`
 Build your application with the `sam build --use-container` command. Inovke with some .json from the events file.
 
 ```bash
-roboclipper_match_uploader_sam$ sam build --use-container
+sam build --use-container
 ```
 
 ```bash
