@@ -29,12 +29,12 @@ Resources:
       - x86_64
       Environment:
         Variables:
-          EVENT_NAME: "IA - Coral Sea"
-          EVENT_TYPE: "League Meet 2025-01-04"
+          EVENT_NAME: "High Definition"
+          EVENT_TYPE: "Invitational"
           EVENT_DESCRIPTION: "Event Information: \n
                               FIRST Washington - https://firstwa.org/ \n
                               Official FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA"
-          EVENT_PLAYLIST: "PLoRnKfyWNUleDroiOiFaxPXGPPqZJ8Fvr"
+          EVENT_PLAYLIST: "PLoRnKfyWNUldsknJNSwmuNzUKiLRv3AyG"
           SEASON_NAME: "Into The Deep"
       Events:
         RoboclipperSNSReceived:
