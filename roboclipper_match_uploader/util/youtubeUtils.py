@@ -66,8 +66,7 @@ def authyt(s3Client):
 
 def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey, eventConfig):
     title,description = buildTitleAndDescription(bucketKey, eventConfig)
-    privacy = "unlisted" if eventConfig is None or eventConfig.get("EVENT_NAME") is "TEST" else "public"
-
+    privacy = "unlisted" if eventConfig is None or eventConfig.get("EVENT_NAME") == "TEST" else "public"
     request = youtubeClient.videos().insert(
         part="snippet,status",
         body={
@@ -82,7 +81,7 @@ def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey, eventConfig):
         },
         media_body=MediaIoBaseUpload(clippedVideo, mimetype="video/mp4")
     )
-
+    
     return request.execute()
 
 def uploadPlaylistRequest(youtubeClient, videoId, eventConfig):
