@@ -4,7 +4,7 @@ Quick and dirty uploader for S3 files received from roboclipper. Works in combin
 
 Note: Uploaded account needs to be audited by Google as default API limit is likely too low (8 videos / day).
 
-Deploys on uload to AWS account `831866741626`
+Deploys on commit to AWS account `831866741626`
 
 ## Use the SAM CLI to build and test locally
 
