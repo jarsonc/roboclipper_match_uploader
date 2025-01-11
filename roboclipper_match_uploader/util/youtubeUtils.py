@@ -1,4 +1,3 @@
-import re
 import boto3
 import googleapiclient.discovery
 import googleapiclient.errors
