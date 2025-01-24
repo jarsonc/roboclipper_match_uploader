@@ -29,7 +29,7 @@
     },
     "USWAWULT": {
         "EVENT_NAME": "TEST",
-        "EVENT_TYPE": "League Tournmanet",
+        "EVENT_TYPE": "League Tournament",
         "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
         "EVENT_PLAYLIST": "PLoRnKfyWNUlcTmM2XCDp7ms11yalWyn0g",
         "SEASON_NAME": "Into The Deep"
@@ -39,6 +39,13 @@
         "EVENT_TYPE": "League Meet",
         "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
         "EVENT_PLAYLIST": "PLoRnKfyWNUldqXqq-DpYOgCYSO_swXJXr",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "USIACELLT": {
+        "EVENT_NAME": "IA Celtic Sea",
+        "EVENT_TYPE": "League Tournament",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Celtic Sea League Tournament. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACELLT",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlfH1l2Zs9_DNgY3qHeIU4ul",
         "SEASON_NAME": "Into The Deep"
     }
 }
