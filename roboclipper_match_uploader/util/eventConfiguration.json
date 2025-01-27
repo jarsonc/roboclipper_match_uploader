@@ -47,5 +47,12 @@
         "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Celtic Sea League Tournament. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACELLT",
         "EVENT_PLAYLIST": "PLoRnKfyWNUlfH1l2Zs9_DNgY3qHeIU4ul",
         "SEASON_NAME": "Into The Deep"
+    },
+    "USWACMP": {
+        "EVENT_NAME": "Washington",
+        "EVENT_TYPE": "Championship",
+        "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlfikcHBOPWZ0ff7NCxGksx0",
+        "SEASON_NAME": "Into The Deep"
     }
 }
