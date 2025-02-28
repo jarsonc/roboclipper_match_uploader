@@ -61,5 +61,19 @@
         "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Celtic Sea League Tournament. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACELLT",
         "EVENT_PLAYLIST": "PLoRnKfyWNUleuNWLqgPAACuouLgbP3MvH",
         "SEASON_NAME": "Into The Deep"
+    },
+    "USIACMPGOLD": {
+        "EVENT_NAME": "Iowa Championship - Gold Division",
+        "EVENT_TYPE": "State Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Iowa Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACMP",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlfLgKWo1HOnkuN0KzmORCxT",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "USIACMPBLA": {
+        "EVENT_NAME": "Iowa Championship - Black Division",
+        "EVENT_TYPE": "State Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Iowa Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACMP",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUldcH_NaPdqcH_bZoS8kLBy1",
+        "SEASON_NAME": "Into The Deep"
     }
 }
