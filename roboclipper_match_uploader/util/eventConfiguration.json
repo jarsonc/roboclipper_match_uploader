@@ -75,5 +75,12 @@
         "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Iowa Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACMP",
         "EVENT_PLAYLIST": "PLoRnKfyWNUldcH_NaPdqcH_bZoS8kLBy1",
         "SEASON_NAME": "Into The Deep"
+    },
+    "USIACMP": {
+        "EVENT_NAME": "Iowa Championship",
+        "EVENT_TYPE": "State Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Iowa Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACMP",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUldE5LtepT1O1Jd8DlSPDiss",
+        "SEASON_NAME": "Into The Deep"
     }
 }
