@@ -21,6 +21,13 @@ def callYouTube(clippedVideo, bucketKey):
     with open(EVENT_CONFIGS_FILE) as eventConfigFile:
         allEventConfigs = json.load(eventConfigFile)
         eventCode = bucketKey.split('/')[1].strip().upper()
+        print(eventCode)
+        if eventCode == "USIACMP":
+            divisionCode = bucketKey.split('/')[2].strip().upper()
+            if divisionCode == 1:
+                eventCode = "USIACMPGOLD"
+            else:
+                eventCode = "USIACMPBLA"
         eventConfig = allEventConfigs.get(eventCode)
 
 
@@ -115,7 +122,6 @@ def createTokenFile(creds, clientSecretsFile):
 
 def buildTitleAndDescription(bucketKey, eventConfig):
     strippedMatchTitle = Path(bucketKey).stem
-
     if 'M' in strippedMatchTitle:
         formattedMatchTitle = strippedMatchTitle.replace("M", "Playoff Match ")
     elif 'Q' in strippedMatchTitle:
