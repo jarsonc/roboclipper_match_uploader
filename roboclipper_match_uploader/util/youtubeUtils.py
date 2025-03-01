@@ -24,7 +24,7 @@ def callYouTube(clippedVideo, bucketKey):
         print(eventCode)
         if eventCode == "USIACMP":
             divisionCode = bucketKey.split('/')[2].strip().upper()
-            if divisionCode == 1:
+            if divisionCode == "1":
                 eventCode = "USIACMPGOLD"
             else:
                 eventCode = "USIACMPBLA"
