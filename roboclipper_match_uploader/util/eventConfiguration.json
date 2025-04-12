@@ -27,13 +27,6 @@
         "EVENT_PLAYLIST": "PLoRnKfyWNUlcUXUUZUjdmNjZyhjg_VQnI",
         "SEASON_NAME": "Into The Deep"
     },
-    "USWAWULT": {
-        "EVENT_NAME": "TEST",
-        "EVENT_TYPE": "League Tournament",
-        "EVENT_DESCRIPTION": "Event Information: \nFIRST Washington - https://firstwa.org/ \nOfficial FIRST Data Source - https://ftc-events.firstinspires.org/2024/region/USWA",
-        "EVENT_PLAYLIST": "PLoRnKfyWNUlcTmM2XCDp7ms11yalWyn0g",
-        "SEASON_NAME": "Into The Deep"
-    },
     "USIACORM1": {
         "EVENT_NAME": "IA Coral Sea",
         "EVENT_TYPE": "League Meet",
@@ -81,6 +74,34 @@
         "EVENT_TYPE": "State Championship",
         "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP Iowa Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/USIACMP",
         "EVENT_PLAYLIST": "PLoRnKfyWNUldE5LtepT1O1Jd8DlSPDiss",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "FTCCMP1FRAN": {
+        "EVENT_NAME": "2025 FIRST Championship - FIRST Tech Challenge - Franklin Division",
+        "EVENT_TYPE": "World Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP World Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/FTCCMP1",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlf2aV6J8F1Oy7XdV65VzO2n",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "FTCCMP1JEMI": {
+        "EVENT_NAME": "2025 FIRST Championship - FIRST Tech Challenge - Jemison Division",
+        "EVENT_TYPE": "World Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP World Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/FTCCMP1",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlcvcy1-BOwFUpcy_vGp2ihD",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "FTCCMP1EDIS": {
+        "EVENT_NAME": "2025 FIRST Championship - FIRST Tech Challenge - Edison Division sponsored by Google.org",
+        "EVENT_TYPE": "World Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP World Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/FTCCMP1",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlcuiB64Ybl7bG8newLU2KKs",
+        "SEASON_NAME": "Into The Deep"
+    },
+    "FTCCMP1OCHO": {
+        "EVENT_NAME": "2025 FIRST Championship - FIRST Tech Challenge - Ochoa Division sponsored by Qualcomm",
+        "EVENT_TYPE": "World Championship",
+        "EVENT_DESCRIPTION": "FTC Iowa INTO THE DEEP World Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/FTCCMP1",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlctdFDJQR_IhFTenM5PjxuF",
         "SEASON_NAME": "Into The Deep"
     }
 }
