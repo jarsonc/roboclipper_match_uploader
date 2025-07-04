@@ -103,5 +103,12 @@
         "EVENT_DESCRIPTION": "FTC INTO THE DEEP World Championship. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/FTCCMP1",
         "EVENT_PLAYLIST": "PLoRnKfyWNUlctdFDJQR_IhFTenM5PjxuF",
         "SEASON_NAME": "Into The Deep"
+    },
+    "FPECRI": {
+        "EVENT_NAME": "Chicago Robotics Invitational Premier Event ",
+        "EVENT_TYPE": "Premier Event",
+        "EVENT_DESCRIPTION": "The Chicago Robotics Invitational Premier Event. \nLive match scores and rankings available at https://ftc-events.firstinspires.org/2024/FPECRI",
+        "EVENT_PLAYLIST": "PLoRnKfyWNUlcnrYyst4KnrLRC2oyqZioe",
+        "SEASON_NAME": "Into The Deep"
     }
 }
