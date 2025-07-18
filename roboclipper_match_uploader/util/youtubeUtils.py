@@ -16,7 +16,8 @@ from pathlib import Path
 s3Client = boto3.client('s3')
 
 def callYouTube(clippedVideo, bucketKey):
-    youtubeClient = authyt(s3Client)
+    jschengYtClient = authyt(s3Client)
+    criYtClient = authyt(s3Client)
 
     with open(EVENT_CONFIGS_FILE) as eventConfigFile:
         allEventConfigs = json.load(eventConfigFile)
@@ -32,13 +33,19 @@ def callYouTube(clippedVideo, bucketKey):
 
 
     print("Uploading video to YouTube")
-    videoUploadResponse = uploadVideoRequest(youtubeClient, clippedVideo, bucketKey, eventConfig)
+    videoUploadResponse = uploadVideoRequest(jschengYtClient, clippedVideo, bucketKey, eventConfig)
     videoId = videoUploadResponse.get("id")
     print("Uploaded video: ", videoUploadResponse)
 
-    print("Updating playlist")
-    uploadPlaylistResponse = uploadPlaylistRequest(youtubeClient, videoId, eventConfig)
+    print("Updating playlist on jscheng")
+    uploadPlaylistResponse = uploadPlaylistRequest(jschengYtClient, videoId, eventConfig)
     print("Successfully updated playlist: ", uploadPlaylistResponse)
+
+    if eventCode == "FPECRI":
+        print("Updating playlist on CRI")
+        uploadPlaylistResponse = uploadPlaylistRequestCRI(criYtClient, videoId, eventConfig)
+        print("Successfully updated playlist: ", uploadPlaylistResponse)
+        
     return
 
 def authyt(s3Client):
@@ -92,6 +99,24 @@ def uploadVideoRequest(youtubeClient, clippedVideo, bucketKey, eventConfig):
 
 def uploadPlaylistRequest(youtubeClient, videoId, eventConfig):
     playlist = DEFAULT_PLAYLIST if eventConfig is None else eventConfig.get("EVENT_PLAYLIST")
+
+    request = youtubeClient.playlistItems().insert(
+        part="snippet",
+        body={
+          "snippet": {
+            "playlistId": playlist,
+            "resourceId": {
+                "kind": "youtube#video",
+                "videoId": videoId
+            }
+          }
+        }
+    )
+
+    return request.execute()
+
+def uploadPlaylistRequestCRI(youtubeClient, videoId, eventConfig):
+    playlist = eventConfig.get("CRI_EVENT_PLAYLIST")
 
     request = youtubeClient.playlistItems().insert(
         part="snippet",

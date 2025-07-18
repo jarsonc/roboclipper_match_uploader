@@ -1,6 +1,7 @@
 # YouTube API Consts
 API_SERVICE_NAME = "youtube"
 API_VERSION = "v3"
+API_KEY_FILE = "apiKeyFile.json"
 DESKTOP_TOKEN_FILE = "util/desktopSecret.json"
 SERVICE_ACCOUNT_FILE = "service.json"
 SCOPES = ["https://www.googleapis.com/auth/youtube"]
