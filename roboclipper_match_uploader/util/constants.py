@@ -6,6 +6,7 @@ DESKTOP_TOKEN_FILE = "util/desktopSecret.json"
 SERVICE_ACCOUNT_FILE = "service.json"
 SCOPES = ["https://www.googleapis.com/auth/youtube"]
 TOKEN_FILE = "token.json"
+EXTERNAL_TOKEN_FILE = "secondaryToken.json"
 
 # YouTube Video Consts
 DEFAULT_DESCRIPTION = """Event: \n

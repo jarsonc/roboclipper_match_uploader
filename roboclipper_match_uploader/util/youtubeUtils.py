@@ -17,7 +17,7 @@ s3Client = boto3.client('s3')
 
 def callYouTube(clippedVideo, bucketKey):
     jschengYtClient = authyt(s3Client)
-    criYtClient = authyt(s3Client)
+    criYtClient = authyt(s3Client, True)
 
     with open(EVENT_CONFIGS_FILE) as eventConfigFile:
         allEventConfigs = json.load(eventConfigFile)
@@ -45,10 +45,10 @@ def callYouTube(clippedVideo, bucketKey):
         print("Updating playlist on CRI")
         uploadPlaylistResponse = uploadPlaylistRequestCRI(criYtClient, videoId, eventConfig)
         print("Successfully updated playlist: ", uploadPlaylistResponse)
-        
+
     return
 
-def authyt(s3Client):
+def authyt(s3Client, secondaryAccountAuth = False):
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -63,7 +63,7 @@ def authyt(s3Client):
             print(f'Refresh token expired requesting authorization again: {error}')
     else:
         try:
-            tokenFileFromS3 = s3Client.get_object(Bucket="roboclipper-resources", Key=TOKEN_FILE)     
+            tokenFileFromS3 = s3Client.get_object(Bucket="roboclipper-resources", Key=TOKEN_FILE if not secondaryAccountAuth else EXTERNAL_TOKEN_FILE)     
             credJson = json.loads(tokenFileFromS3["Body"].read().decode())
             creds = Credentials.from_authorized_user_info(credJson, SCOPES)
             creds.refresh(Request())
