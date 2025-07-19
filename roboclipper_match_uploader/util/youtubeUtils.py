@@ -17,8 +17,7 @@ s3Client = boto3.client('s3')
 
 def callYouTube(clippedVideo, bucketKey):
     jschengYtClient = authyt(s3Client)
-    criYtClient = authyt(s3Client, True)
-
+    
     with open(EVENT_CONFIGS_FILE) as eventConfigFile:
         allEventConfigs = json.load(eventConfigFile)
         eventCode = bucketKey.split('/')[1].strip().upper()
@@ -40,11 +39,6 @@ def callYouTube(clippedVideo, bucketKey):
     print("Updating playlist on jscheng")
     uploadPlaylistResponse = uploadPlaylistRequest(jschengYtClient, videoId, eventConfig)
     print("Successfully updated playlist: ", uploadPlaylistResponse)
-
-    if eventCode == "FPECRI":
-        print("Updating playlist on CRI")
-        uploadPlaylistResponse = uploadPlaylistRequestCRI(criYtClient, videoId, eventConfig)
-        print("Successfully updated playlist: ", uploadPlaylistResponse)
 
     return
 
