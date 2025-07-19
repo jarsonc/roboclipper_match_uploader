@@ -42,7 +42,7 @@ def callYouTube(clippedVideo, bucketKey):
 
     return
 
-def authyt(s3Client, secondaryAccountAuth = False):
+def authyt(s3Client):
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -57,7 +57,7 @@ def authyt(s3Client, secondaryAccountAuth = False):
             print(f'Refresh token expired requesting authorization again: {error}')
     else:
         try:
-            tokenFileFromS3 = s3Client.get_object(Bucket="roboclipper-resources", Key=TOKEN_FILE if not secondaryAccountAuth else EXTERNAL_TOKEN_FILE)     
+            tokenFileFromS3 = s3Client.get_object(Bucket="roboclipper-resources", Key=TOKEN_FILE)     
             credJson = json.loads(tokenFileFromS3["Body"].read().decode())
             creds = Credentials.from_authorized_user_info(credJson, SCOPES)
             creds.refresh(Request())
