@@ -57,6 +57,8 @@ def authyt(s3Client):
             print(f'Refresh token expired requesting authorization again: {error}')
     else:
         try:
+            s3BucketContents = s3Client.list_objects(Bucket='roboclipper-resources')
+            print(s3BucketContents)
             tokenFileFromS3 = s3Client.get_object(Bucket="roboclipper-resources", Key=TOKEN_FILE)     
             credJson = json.loads(tokenFileFromS3["Body"].read().decode())
             creds = Credentials.from_authorized_user_info(credJson, SCOPES)
